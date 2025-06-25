@@ -1,7 +1,7 @@
 import React from 'react';
-import './ProductList.css'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart } from './CartSlice';
+import './ProductList.css'; 
 
 const ProductList = () => {
 
@@ -10,9 +10,9 @@ const ProductList = () => {
 
 
   const products = [
-    { id: 1, name: 'Product A', price: 60 },
-    { id: 2, name: 'Product B', price: 75 },
-    { id: 3, name: 'Product C', price: 30 },
+    { id: 1, name: 'Product A', price: 60, SuperCoinFactor: 0.15 },
+    { id: 2, name: 'Product B', price: 75, SuperCoinFactor: 0.15 },
+    { id: 3, name: 'Product C', price: 30, SuperCoinFactor: 0.15 },
   ];
 
   const handleAddToCart = (product) => {

@@ -24,7 +24,7 @@ const ShoppingCart = () => {
   const handleDecreaseQuantity = itemId => {
     dispatch (decreaseItemQuantity(itemId))
   }
-  
+
   return (
     <>
     
