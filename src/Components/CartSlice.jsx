@@ -42,6 +42,19 @@ const CartSlice = createSlice({
                 state.cartItems = state.cartItems.filter(item => item.id !== action.payload)
             }
         },
+        calculateSuperCoins (state) {
+            const totalAmount = state.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+            
+            if (totalAmount >= 100 && totalAmount < 200) {
+                state.superCoins = 10;
+            } else if (totalAmount >= 200 && totalAmount < 300) {
+                state.superCoins = 20;
+            } else if (totalAmount >= 300) {
+                state.superCoins = 30;
+            } else {
+                state.superCoins = 0;
+            }
+        },
     }
 
 });
@@ -52,6 +65,7 @@ export const {
     clearCart,
     increaseItemQuantity,
     decreaseItemQuantity,
+    calculateSuperCoins
 } = CartSlice.actions;
 
 export default CartSlice.reducer;
